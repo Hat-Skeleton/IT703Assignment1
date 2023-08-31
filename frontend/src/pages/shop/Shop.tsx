@@ -1,10 +1,10 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
 import { Heading, VStack, Card, CardHeader, CardBody } from "@chakra-ui/react";
-import { ShopItem, ShopItemData } from "../../components/Types";
+import { ShopItem } from "../../components/Types";
 
 export const Shop = () => {
-  const { shopItems } = useLoaderData() as ShopItemData;
+  const shopItems = useLoaderData() as ShopItem[];
 
   const HandleSelectShopItem = (shopItemId: number) => {
     console.log(shopItemId);

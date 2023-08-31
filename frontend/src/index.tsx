@@ -38,8 +38,8 @@ const router = createBrowserRouter([
           },
           {
             path: "shop/:shopId",
-            element: <ShopItem />,
             loader: ShopLoader,
+            element: <ShopItem />,
           },
           {
             path: "orders",
