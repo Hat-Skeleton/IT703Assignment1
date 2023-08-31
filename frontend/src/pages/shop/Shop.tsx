@@ -2,12 +2,10 @@ import React from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import {
   Heading,
-  VStack,
   Card,
   CardHeader,
   CardBody,
   SimpleGrid,
-  GridItem,
   Box,
 } from "@chakra-ui/react";
 import { ShopItem } from "../../components/Types";

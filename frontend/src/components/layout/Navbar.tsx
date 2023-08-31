@@ -1,5 +1,5 @@
 import React from "react";
-import { Heading, Input, Button, VStack, HStack } from "@chakra-ui/react";
+import { Button, HStack } from "@chakra-ui/react";
 import { Link, useNavigate } from "react-router-dom";
 
 const routes = [
