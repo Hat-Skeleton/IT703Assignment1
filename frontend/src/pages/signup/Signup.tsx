@@ -13,6 +13,7 @@ export const Signup = () => {
     const pass = password.current?.value ?? "";
 
     const token = user + pass;
+    console.log(token);
     //sessionStorage.setItem("token", token);
     navigate("/login");
   };
