@@ -34,11 +34,11 @@ const router = createBrowserRouter([
         children: [
           {
             path: "shop",
+            loader: ShopLoader,
             element: <Shop />,
           },
           {
             path: "shop/:shopId",
-            loader: ShopLoader,
             element: <ShopItem />,
           },
           {
