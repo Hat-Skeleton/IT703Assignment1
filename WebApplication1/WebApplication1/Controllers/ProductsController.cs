@@ -7,19 +7,19 @@ namespace WebApplication1.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UserController : ControllerBase
+    public class ProductsController : ControllerBase
     {
         private IConfiguration _configuration;
-        public UserController(IConfiguration configuration) 
+        public ProductsController(IConfiguration configuration) 
         {
             _configuration = configuration;
         }
 
         [HttpGet]
-        [Route ("GetUsers")]
-        public JsonResult GetUsers()
+        [Route ("GetProducts")]
+        public JsonResult GetProducts()
         {
-            string query = "select * from dbo.Users";
+            string query = "select * from dbo.Products";
             DataTable table = new DataTable();
             string sqlDatasource = _configuration.GetConnectionString("it703DBCon");
             SqlDataReader myReader;
@@ -37,10 +37,11 @@ namespace WebApplication1.Controllers
         }
 
         [HttpPost]
-        [Route("AddUser")]
-        public JsonResult AddUser([FromForm] string newUsername, string newPassword, string newFName, string newLName, string newAddress, string newPostcode, string newCity, string newCountry)
+        [Route("AddProducts")]
+        public JsonResult AddProducts([FromForm] int supplierID, string sku, string productName, 
+            string productDesc, float price, int currentStock, int minStockLevel)
         {
-            string query = "insert into dbo.Users values(@newUsername,@newPassword,@newFName,@newLName,'user',@newAddress,@newPostcode,@newCity,@newCountry)";
+            string query = "insert into dbo.Products values(@supplierID,@sku,@productName,@productDesc,@price,@currentStock,@minStockLevel)";
             DataTable table = new DataTable();
             string sqlDatasource = _configuration.GetConnectionString("it703DBCon");
             SqlDataReader myReader;
@@ -49,27 +50,26 @@ namespace WebApplication1.Controllers
                 myCon.Open();
                 using (SqlCommand myCommand = new SqlCommand(query, myCon))
                 {
-                    myCommand.Parameters.AddWithValue("@newUsername", newUsername);
-                    myCommand.Parameters.AddWithValue("@newPassword", newPassword);
-                    myCommand.Parameters.AddWithValue("@newFName", newFName);
-                    myCommand.Parameters.AddWithValue("@newLName", newLName);
-                    myCommand.Parameters.AddWithValue("@newAddress", newAddress);
-                    myCommand.Parameters.AddWithValue("@newPostcode", newPostcode);
-                    myCommand.Parameters.AddWithValue("@newCity", newCity);
-                    myCommand.Parameters.AddWithValue("@newCountry", newCountry);
+                    myCommand.Parameters.AddWithValue("@supplierID", supplierID);
+                    myCommand.Parameters.AddWithValue("@sku", sku);
+                    myCommand.Parameters.AddWithValue("@productName", productName);
+                    myCommand.Parameters.AddWithValue("@productDesc", productDesc);
+                    myCommand.Parameters.AddWithValue("@price", price);
+                    myCommand.Parameters.AddWithValue("@currentStock", currentStock);
+                    myCommand.Parameters.AddWithValue("@minStockLevel", minStockLevel);
                     myReader = myCommand.ExecuteReader();
                     table.Load(myReader);
                     myReader.Close();
                 }
             }
-            return new JsonResult("User added");
+            return new JsonResult("Product added");
         }
 
         [HttpDelete]
-        [Route("DeleteUser")]
-        public JsonResult DeleteUser(int userID)
+        [Route("DeleteProducts")]
+        public JsonResult DeleteProducts(int productsID)
         {
-            string query = "delete from dbo.Users where userID=@userID";
+            string query = "delete from dbo.Products where productsID=@productsID";
             DataTable table = new DataTable();
             string sqlDatasource = _configuration.GetConnectionString("it703DBCon");
             SqlDataReader myReader;
@@ -78,13 +78,13 @@ namespace WebApplication1.Controllers
                 myCon.Open();
                 using (SqlCommand myCommand = new SqlCommand(query, myCon))
                 {
-                    myCommand.Parameters.AddWithValue("@userID", userID);
+                    myCommand.Parameters.AddWithValue("@productsID", productsID);
                     myReader = myCommand.ExecuteReader();
                     table.Load(myReader);
                     myReader.Close();
                 }
             }
-            return new JsonResult("User deleted");
+            return new JsonResult("Product deleted");
         }
 
 

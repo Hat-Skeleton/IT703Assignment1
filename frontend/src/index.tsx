@@ -1,4 +1,5 @@
 import * as React from "react";
+
 import * as ReactDOM from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
 import * as serviceWorker from "./serviceWorker";
@@ -12,7 +13,7 @@ import { Signup } from "./pages/signup/Signup";
 import { Layout } from "./components/layout/Layout";
 import { AuthLoader } from "./components/layout/AuthLoader";
 import { ShopItem } from "./pages/shopItem/ShopItem";
-import { ShopLoader } from "./pages/shop/ShopLoader";
+//import { ShopLoader } from "./pages/shop/ShopLoader";
 
 const container = document.getElementById("root");
 if (!container) throw new Error("Failed to find the root element");
@@ -35,7 +36,7 @@ const router = createBrowserRouter([
           {
             path: "shop",
             element: <Shop />,
-            loader: ShopLoader,
+            //loader: ShopLoader,
           },
           {
             path: "shop/:shopId",

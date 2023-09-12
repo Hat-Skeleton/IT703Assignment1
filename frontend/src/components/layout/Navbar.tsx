@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, HStack } from "@chakra-ui/react";
+import { Button, HStack, Box } from "@chakra-ui/react";
 import { Link, useNavigate } from "react-router-dom";
 
 const routes = [
@@ -32,10 +32,12 @@ export const Navbar = () => {
       <HStack mb={10}>
         {routes.map((route) => (
           <Link to={route.path} key={route.display}>
-            {route.display}
+            <Box ml={25}>{route.display}</Box>
           </Link>
         ))}
-        <Button onClick={HandleLogout}>Logout</Button>
+        <Button ml={100} onClick={HandleLogout}>
+          Logout
+        </Button>
       </HStack>
     </div>
   );

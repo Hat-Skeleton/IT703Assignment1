@@ -1,9 +1,10 @@
 export type ShopItem = {
-  id: number;
-  title: string;
-  summary: string;
-};
-
-export type ShopItemData = {
-  shopItems: ShopItem[];
+  ProductID: number;
+  SupplierID: number;
+  SKU: string;
+  ProductName: string;
+  ProductDesc: string;
+  price: number;
+  CurrentStock: number;
+  MinStockLevel: number;
 };
