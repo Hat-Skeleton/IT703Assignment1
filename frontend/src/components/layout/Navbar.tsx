@@ -12,6 +12,10 @@ const routes = [
     display: "Shop",
   },
   {
+    path: "cart",
+    display: "Cart",
+  },
+  {
     path: "signup",
     display: "Sign up",
   },

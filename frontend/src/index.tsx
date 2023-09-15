@@ -12,7 +12,6 @@ import { Login } from "./pages/login/Login";
 import { Signup } from "./pages/signup/Signup";
 import { Layout } from "./components/layout/Layout";
 import { AuthLoader } from "./components/layout/AuthLoader";
-import { ShopItem } from "./pages/shopItem/ShopItem";
 //import { ShopLoader } from "./pages/shop/ShopLoader";
 
 const container = document.getElementById("root");
@@ -37,11 +36,6 @@ const router = createBrowserRouter([
             path: "shop",
             element: <Shop />,
             //loader: ShopLoader,
-          },
-          {
-            path: "shop/:shopId",
-            element: <ShopItem />,
-            //loader: ShopItemLoader,
           },
           {
             path: "orders",

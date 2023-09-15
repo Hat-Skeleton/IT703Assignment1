@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "q6kn8nfvwIJSI/rsLtb+Fms+NP6x/WggEnTrWR/cvbNfl67U2ftcuBpz3W/EPE17mXzLmp3w9k5+oCA2SxUnmA==",
+  "dgSpecHash": "KywjUgZqf/wBBw9+sTj4VbaX6kTInHX8BLiT4uZkNH4HNViJL0pzwGJbQ5wdEx5u3+n4z/PnihdQxaWvWK2uwg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\codyd\\Documents\\GitHub\\IT703Assignment1\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+  "projectFilePath": "c:\\Users\\codyd\\Documents\\GitHub\\IT703Assignment1\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\codyd\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\7.0.10\\microsoft.aspnetcore.jsonpatch.7.0.10.nupkg.sha512",
     "C:\\Users\\codyd\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\7.0.10\\microsoft.aspnetcore.mvc.newtonsoftjson.7.0.10.nupkg.sha512",
